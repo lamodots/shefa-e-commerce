@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top px-4">
-   
+
   <div class="container-fluid">
     <a class="navbar-brand logo-link" href="#">Shefa</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,36 +11,36 @@
           <a class="nav-link" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Products</a>
+          <a class="nav-link" href="/products">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">My Account</a>
+          <a class="nav-link" href="/my-account">My Account</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Register</a>
+          <a class="nav-link" href="/register">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
+          <a class="nav-link" href="/login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Logout</a>
+          <a class="nav-link" href="/logout">Logout</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link cart-link d-inline-block" href="#" >
+          <a class="nav-link cart-link d-inline-block" href="#">
             <i class="fa-solid fa-cart-shopping"></i>
             <sup>2</sup>
           </a>
         </li>
-         <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" href="#">Total: &#8358;</a>
         </li>
-        
-        
+
+
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search products" aria-label="Search" style="min-width: 200px;"/>
+        <input class="form-control me-2" type="search" placeholder="Search products" aria-label="Search" style="min-width: 200px;" />
         <button class="btn btn-custom" type="submit">
-            <i class="fas fa-search"></i>
+          <i class="fas fa-search"></i>
         </button>
       </form>
     </div>
