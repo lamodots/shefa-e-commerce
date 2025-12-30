@@ -184,7 +184,7 @@ function getProducts()
         $product_price = $row['product_price'];
         $product_image = htmlspecialchars($row['product_image1']);
 
-        // Use BASE_URL constant
+       
         echo "
             <a href='/products/$product_slug' class='product-card'>
                 <div class='product-image'>
@@ -225,6 +225,41 @@ function getProductCount()
         $row = mysqli_fetch_assoc($result);
         return $row['total'];
     }
+}
+
+function getRelatedProducts($category, $exclude_product_id)
+{
+    global $con;
+
+    $query = "SELECT * FROM products WHERE category = ? AND product_id != ? ORDER BY RAND() LIMIT 4";
+    $stmt = mysqli_prepare($con, $query);
+    mysqli_stmt_bind_param($stmt, "si", $category, $exclude_product_id);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $product_id    = $row['product_id'];
+        $product_title = htmlspecialchars($row['product_title']);
+        $product_slug  = htmlspecialchars($row['product_slug']);
+        $product_price = $row['product_price'];
+        $product_image = htmlspecialchars($row['product_image1']);
+
+        echo "
+            <a href='/products/$product_slug' class='product-card'>
+                <div class='product-image'>
+                    <img src='$product_image' alt='$product_title' loading='lazy'>
+                </div>
+                <div class='product-info'>
+                    <h3 class='product-name'>$product_title</h3>
+                    <div class='product-meta'>
+                        <span class='stock-badge'>IN STOCK</span>
+                        <span class='product-price'>" . format_price($product_price) . "</span>
+                    </div>
+                </div>
+            </a>";
+    }
+
+    mysqli_stmt_close($stmt);
 }
 ?>
 

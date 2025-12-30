@@ -169,7 +169,6 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     // Color filter toggle
     document.querySelectorAll('.color-option').forEach(option => {
