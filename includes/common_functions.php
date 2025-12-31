@@ -261,5 +261,120 @@ function getRelatedProducts($category, $exclude_product_id)
 
     mysqli_stmt_close($stmt);
 }
-?>
 
+function search_products()
+{
+    global $con , $search_categories;
+
+   if(isset($_GET['search_product_btn']) && !empty($_GET['search-term'])){
+
+    $search_term = trim($_GET['search-term']);
+        
+        // Add wildcards when binding parameters
+    $search_param = '%' . $search_term . '%';
+
+    $query = "SELECT * FROM products WHERE product_title LIKE ? OR product_description LIKE ?  OR product_keywords LIKE ? LIMIT " . ITEMS_PER_PAGE;
+
+    $stmt = mysqli_prepare($con, $query);
+    
+     if (!$stmt) {
+            echo '<div class="error-message">Search error: ' . mysqli_error($con) . '</div>';
+            return;
+        }
+
+    mysqli_stmt_bind_param($stmt, "sss", $search_param, $search_param, $search_param);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    if (mysqli_num_rows($result) === 0) {
+          echo '<div class="empty-state">
+                    <i class="fas fa-search"></i>
+                    <p>No products found matching "<strong>' . htmlspecialchars($search_term) . '</strong>"</p>
+                    <p class="text-muted">Try different keywords or browse our categories</p>
+                  </div>';
+            return;
+    }
+
+   $search_categories = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $product_id    = $row['product_id'];
+        $product_title = htmlspecialchars($row['product_title']);
+        $product_slug  = htmlspecialchars($row['product_slug']);
+        $product_price = $row['product_price'];
+        $product_image = htmlspecialchars($row['product_image1']);
+         $search_categories[] = $row['category'];
+      
+
+        echo "
+            <a href='/products/$product_slug' class='product-card'>
+                <div class='product-image'>
+                    <img src='$product_image' alt='$product_title' loading='lazy'>
+                </div>
+                <div class='product-info'>
+                    <h3 class='product-name'>$product_title</h3>
+                    <div class='product-meta'>
+                        <span class='stock-badge'>IN STOCK</span>
+                        <span class='product-price'>" . format_price($product_price) . "</span>
+                    </div>
+                </div>
+            </a>";
+    }
+
+
+    mysqli_stmt_close($stmt);
+
+   } 
+    
+}
+
+
+function search_item_category_nav()
+
+{
+    
+    global $con;
+    
+
+     if (!isset($_GET['search_product_btn']) || empty($_GET['search-term'])) {
+        echo "<p class='text-muted'>No categories</p>";
+        return;
+    }
+
+    $search_term  = trim($_GET['search-term']);
+    $search_param = '%' . $search_term . '%';
+
+    $query = "
+        SELECT DISTINCT c.category_id, c.category_title
+        FROM products p
+        INNER JOIN categories c ON p.category = c.category_title
+        WHERE p.product_title LIKE ?
+           OR p.product_description LIKE ?
+           OR p.product_keywords LIKE ?
+    ";
+
+    $stmt = mysqli_prepare($con, $query);
+    mysqli_stmt_bind_param($stmt, "sss", $search_param, $search_param, $search_param);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    if (mysqli_num_rows($result) === 0) {
+        echo "<p class='text-muted'>No categories</p>";
+        return;
+    }
+
+    
+    while ($row = mysqli_fetch_assoc($result)) {
+                $category_id = $row['category_id'];
+        $category_title = htmlspecialchars($row['category_title']);
+        echo "<div class='filter-option'>
+                <a href='/products?category=$category_title' class='category-filter' data-id='$category_id'> 
+                    " . ucfirst($category_title) . "  
+                </a>
+              </div>";
+    }
+    mysqli_stmt_close($stmt);
+}
+
+
+
+?>

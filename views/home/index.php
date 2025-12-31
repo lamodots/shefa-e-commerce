@@ -11,7 +11,7 @@
         <button class="btn btn-custom ">Shop Now <i class="fa fa-arrow-right"></i></button>
     </div>
     <div class="right d-flex justify-content-end justify-content-sm-center flex-grow-1">
-        <img src="./assets/images/hero_right_image.png" width="440" alt="Hero illustration" />
+        <img src="/assets/images/hero_right_image.png" width="440" alt="Hero illustration" />
     </div>
 </header>
 <main>
@@ -68,7 +68,7 @@
                 <div class="col-md-3 col-sm-6 mb-4">
                     <div class="card product-card h-100 border-0">
                         <div class="product-image-wrapper bg-light p-4 text-center">
-                            <img src="./assets/images/black-tee.jpg" class="card-img-top" alt="Classic Monochrome Tees" style="max-height: 250px; object-fit: contain;">
+                            <img src="/assets/images/black-tee.jpg" class="card-img-top" alt="Classic Monochrome Tees" style="max-height: 250px; object-fit: contain;">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title mb-2" style="font-size: 16px;">Classic Monochrome Tees</h5>
@@ -84,7 +84,7 @@
                 <div class="col-md-3 col-sm-6 mb-4">
                     <div class="card product-card h-100 border-0">
                         <div class="product-image-wrapper bg-light p-4 text-center">
-                            <img src="./assets/images/brown-tee.jpg" class="card-img-top" alt="Monochromatic Wardrobe" style="max-height: 250px; object-fit: contain;">
+                            <img src="/assets/images/brown-tee.jpg" class="card-img-top" alt="Monochromatic Wardrobe" style="max-height: 250px; object-fit: contain;">
                         </div>
                         <div class="card-body ">
                             <h5 class="card-title mb-2" style="font-size: 16px;">Monochromatic Wardrobe</h5>
@@ -100,7 +100,7 @@
                 <div class="col-md-3 col-sm-6 mb-4">
                     <div class="card product-card h-100 border-0">
                         <div class="product-image-wrapper bg-light p-4 text-center">
-                            <img src="./assets/images/white-tee.jpg" class="card-img-top" alt="Essential Neutrals" style="max-height: 250px; object-fit: contain;">
+                            <img src="/assets/images/white-tee.jpg" class="card-img-top" alt="Essential Neutrals" style="max-height: 250px; object-fit: contain;">
                         </div>
                         <div class="card-body ">
                             <h5 class="card-title mb-2" style="font-size: 16px;">Essential Neutrals</h5>
@@ -116,7 +116,7 @@
                 <div class="col-md-3 col-sm-6 mb-4">
                     <div class="card product-card h-100 border-0">
                         <div class="product-image-wrapper bg-light p-4 text-center">
-                            <img src="./assets/images/utraanet-black.jpg" class="card-img-top" alt="UTRAANET Black" style="max-height: 250px; object-fit: contain;">
+                            <img src="/assets/images/utraanet-black.jpg" class="card-img-top" alt="UTRAANET Black" style="max-height: 250px; object-fit: contain;">
                         </div>
                         <div class="card-body ">
                             <h5 class="card-title mb-2" style="font-size: 16px;">UTRAANET Black</h5>
@@ -171,7 +171,7 @@
                         <div class="col-md-3 col-sm-6 mb-4">
                             <div class="card product-card h-100 border-0">
                                 <div class="product-image-wrapper bg-light p-4 text-center">
-                                    <img src="./assets/images/black-sweatshirt.jpg" class="card-img-top" alt="Elegant Ebony Sweatshirts" style="max-height: 250px; object-fit: contain;">
+                                    <img src="/assets/images/black-sweatshirt.jpg" class="card-img-top" alt="Elegant Ebony Sweatshirts" style="max-height: 250px; object-fit: contain;">
                                 </div>
                                 <div class="card-body ">
                                     <h5 class="card-title mb-2" style="font-size: 16px;">Elegant Ebony Sweatshirts</h5>
@@ -187,7 +187,7 @@
                         <div class="col-md-3 col-sm-6 mb-4">
                             <div class="card product-card h-100 border-0">
                                 <div class="product-image-wrapper bg-light p-4 text-center">
-                                    <img src="./assets/images/black-hoodie.jpg" class="card-img-top" alt="Sleek and Cozy Black" style="max-height: 250px; object-fit: contain;">
+                                    <img src="/assets/images/black-hoodie.jpg" class="card-img-top" alt="Sleek and Cozy Black" style="max-height: 250px; object-fit: contain;">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title mb-2" style="font-size: 16px;">Sleek and Cozy Black</h5>
@@ -203,7 +203,7 @@
                         <div class="col-md-3 col-sm-6 mb-4">
                             <div class="card product-card h-100 border-0">
                                 <div class="product-image-wrapper bg-light p-4 text-center">
-                                    <img src="./assets/images/raw-black-tee.jpg" class="card-img-top" alt="Raw Black Tees" style="max-height: 250px; object-fit: contain;">
+                                    <img src="/assets/images/raw-black-tee.jpg" class="card-img-top" alt="Raw Black Tees" style="max-height: 250px; object-fit: contain;">
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title mb-2" style="font-size: 16px;">Raw Black Tees</h5>
@@ -219,7 +219,7 @@
                         <div class="col-md-3 col-sm-6 mb-4">
                             <div class="card product-card h-100 border-0">
                                 <div class="product-image-wrapper bg-light p-4 text-center">
-                                    <img src="./assets/images/mockup-black.jpg" class="card-img-top" alt="MOCKUP Black" style="max-height: 250px; object-fit: contain;">
+                                    <img src="/assets/images/mockup-black.jpg" class="card-img-top" alt="MOCKUP Black" style="max-height: 250px; object-fit: contain;">
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title mb-2" style="font-size: 16px;">MOCKUP Black</h5>
@@ -238,7 +238,7 @@
                         <div class="col-md-3 col-sm-6 mb-4">
                             <div class="card product-card h-100 border-0">
                                 <div class="product-image-wrapper bg-light p-4 text-center">
-                                    <img src="./assets/images/black-sweatshirt.jpg" class="card-img-top" alt="Elegant Ebony Sweatshirts" style="max-height: 250px; object-fit: contain;">
+                                    <img src="/assets/images/black-sweatshirt.jpg" class="card-img-top" alt="Elegant Ebony Sweatshirts" style="max-height: 250px; object-fit: contain;">
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title mb-2" style="font-size: 16px;">Elegant Ebony Sweatshirts</h5>
@@ -254,7 +254,7 @@
                         <div class="col-md-3 col-sm-6 mb-4">
                             <div class="card product-card h-100 border-0">
                                 <div class="product-image-wrapper bg-light p-4 text-center">
-                                    <img src="./assets/images/black-hoodie.jpg" class="card-img-top" alt="Sleek and Cozy Black" style="max-height: 250px; object-fit: contain;">
+                                    <img src="/assets/images/black-hoodie.jpg" class="card-img-top" alt="Sleek and Cozy Black" style="max-height: 250px; object-fit: contain;">
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title mb-2" style="font-size: 16px;">Sleek and Cozy Black</h5>
@@ -270,7 +270,7 @@
                         <div class="col-md-3 col-sm-6 mb-4">
                             <div class="card product-card h-100 border-0">
                                 <div class="product-image-wrapper bg-light p-4 text-center">
-                                    <img src="./assets/images/raw-black-tee.jpg" class="card-img-top" alt="Raw Black Tees" style="max-height: 250px; object-fit: contain;">
+                                    <img src="/assets/images/raw-black-tee.jpg" class="card-img-top" alt="Raw Black Tees" style="max-height: 250px; object-fit: contain;">
                                 </div>
                                 <div class="card-body text-center">
                                     <h5 class="card-title mb-2" style="font-size: 16px;">Raw Black Tees</h5>
@@ -289,7 +289,7 @@
                                 <a  href="/products/fashion/1">
 
                                     <div class="product-image-wrapper bg-light p-4 text-center">
-                                        <img src="./assets/images/mockup-black.jpg" class="card-img-top" alt="MOCKUP Black" style="max-height: 250px; object-fit: contain;">
+                                        <img src="/assets/images/mockup-black.jpg" class="card-img-top" alt="MOCKUP Black" style="max-height: 250px; object-fit: contain;">
                                     </div>
                                 </a>
                                 <div class="card-body text-center">

@@ -2,6 +2,8 @@
 <?php include('./config/database.php'); ?>
 <?php include('includes/common_functions.php'); ?>
 <?php include('includes/header.php'); ?>
+
+
 <script>
     document.title = "Shefa - Ecommerce | Products";
 </script>
@@ -28,7 +30,7 @@
             <!-- Categories -->
             <div class="filter-section">
                 <h3 class="filter-title">Categories</h3>
-                <?php get_categories(); ?>
+                <?php search_item_category_nav(); ?>
             </div>
 
             <!-- Color -->
@@ -72,63 +74,51 @@
 
 
             <!-- Results Header -->
-            <!-- <div class="results-header">
-                <div class="results-count">Showing 1-9 of 36 Results</div>
-                <div class="sort-dropdown">
-                    <label>SORT BY:</label>
-                    <select>
-                        <option>Price: Low to High</option>
-                        <option>Price: High to Low</option>
-                        <option>Newest</option>
-                        <option>Best Selling</option>
-                    </select>
+
+            <div class="results-header">
+                <div class="results-count">
+                    <?php
+                    $total = getProductCount();
+                    $showing = min(ITEMS_PER_PAGE, $total);
+                    echo "Showing 1-$showing of $total Results";
+                    if (isset($_GET['category'])) {
+                        echo " in " . ucfirst(htmlspecialchars($_GET['category']));
+                    }
+                    ?>
                 </div>
-            </div> -->
-          <!-- views/products/index.php -->
-<div class="results-header">
-    <div class="results-count">
-        <?php 
-        $total = getProductCount();
-        $showing = min(ITEMS_PER_PAGE, $total);
-        echo "Showing 1-$showing of $total Results";
-        if (isset($_GET['category'])) {
-            echo " in " . ucfirst(htmlspecialchars($_GET['category']));
-        }
-        ?>
-    </div>
-    
-    <form method="GET" action="<?php echo url('products'); ?>" class="sort-form">
-        <?php if (isset($_GET['category'])): ?>
-            <input type="hidden" name="category" value="<?php echo htmlspecialchars($_GET['category']); ?>">
-        <?php endif; ?>
-        
-        <div class="sort-dropdown">
-            <label>SORT BY:</label>
-            <select name="sort" onchange="this.form.submit()">
-                
-                <option value="price_asc" <?php echo (isset($_GET['sort']) && $_GET['sort'] === 'price_asc') ? 'selected' : ''; ?>>
-                    Price: Low to High
-                </option>
-                <option value="price_desc" <?php echo (isset($_GET['sort']) && $_GET['sort'] === 'price_desc') ? 'selected' : ''; ?>>
-                    Price: High to Low
-                </option>
-                <option value="newest" <?php echo (isset($_GET['sort']) && $_GET['sort'] === 'newest') ? 'selected' : ''; ?>>
-                    Newest
-                </option>
-                <option value="name_asc" <?php echo (isset($_GET['sort']) && $_GET['sort'] === 'name_asc') ? 'selected' : ''; ?>>
-                    Name: A-Z
-                </option>
-                <option value="name_desc" <?php echo (isset($_GET['sort']) && $_GET['sort'] === 'name_desc') ? 'selected' : ''; ?>>
-                    Name: Z-A
-                </option>
-            </select>
-        </div>
-    </form>
-</div>
+
+                <form method="GET" action="<?php echo url('products'); ?>" class="sort-form">
+                    <?php if (isset($_GET['category'])): ?>
+                        <input type="hidden" name="category" value="<?php echo htmlspecialchars($_GET['category']); ?>">
+                    <?php endif; ?>
+
+                    <div class="sort-dropdown">
+                        <label>SORT BY:</label>
+                        <select name="sort" onchange="this.form.submit()">
+
+                            <option value="price_asc" <?php echo (isset($_GET['sort']) && $_GET['sort'] === 'price_asc') ? 'selected' : ''; ?>>
+                                Price: Low to High
+                            </option>
+                            <option value="price_desc" <?php echo (isset($_GET['sort']) && $_GET['sort'] === 'price_desc') ? 'selected' : ''; ?>>
+                                Price: High to Low
+                            </option>
+                            <option value="newest" <?php echo (isset($_GET['sort']) && $_GET['sort'] === 'newest') ? 'selected' : ''; ?>>
+                                Newest
+                            </option>
+                            <option value="name_asc" <?php echo (isset($_GET['sort']) && $_GET['sort'] === 'name_asc') ? 'selected' : ''; ?>>
+                                Name: A-Z
+                            </option>
+                            <option value="name_desc" <?php echo (isset($_GET['sort']) && $_GET['sort'] === 'name_desc') ? 'selected' : ''; ?>>
+                                Name: Z-A
+                            </option>
+                        </select>
+                    </div>
+                </form>
+            </div>
 
             <!-- Products Grid -->
             <div class="products-grid">
-                <?php getProducts(); ?>
+
                 <?php search_products(); ?>
             </div>
 

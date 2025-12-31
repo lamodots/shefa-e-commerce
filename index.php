@@ -34,6 +34,9 @@ if ($segments[0] === 'products' && isset($segments[1]) && !empty($segments[1])) 
         case 'products':
             include('views/products/index.php');
             break;
+        case 'catalog':
+            include('views/catalog/index.php');
+            break;
         case 'orders':
             include('views/orders/index.php');
             break;
